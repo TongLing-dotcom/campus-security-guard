@@ -11,13 +11,13 @@
 | # | 文件 | 大小 | 放置到仓库内路径 |
 | :-: | :-- | --: | :-- |
 | 1 | `真假妈妈_成片_v12.7_配音音乐字幕_56.3s_1080p.mp4` | 29.4 MB | `release/成片/` |
-| 2 | `配音人声_15条_v12.7.zip` | 10.6 MB | `release/audio/` |
-| 3 | `BGM_A_悬念压迫.mp3` | 4.1 MB | `release/audio/` |
-| 4 | `BGM_B_温暖释然.mp3` | 7.5 MB | `release/audio/` |
-| 5 | `配音音乐混合轨_v12.7.wav` | 10.3 MB | `release/audio/` |
-| 6 | `改3.mp4`（成片源画面，重出片必需） | 16 MB | `release/源画面/` |
+| 2 | `BGM_A_悬念压迫.mp3` | 4.1 MB | `release/audio/` |
+| 3 | `BGM_B_温暖释然.mp3` | 7.5 MB | `release/audio/` |
+| 4 | `配音音乐混合轨_v12.7.wav` | 10.3 MB | `release/audio/` |
+| 5 | `改3.mp4`（成片源画面，重出片必需） | 16 MB | `release/源画面/` |
 
-> 原创电话铃声（`assets/audio/铃声_iPhone风格_原创_2.17s.wav`）与 17 张 UI 素材体积很小，**已直接包含在仓库中**，无需下载。
+> **下面这些体积很小，已直接包含在仓库中，无需下载**：
+> 15 条人声（`assets/voice/`，共 230 KB）、原创电话铃声（`assets/audio/`）、17 张 UI 素材（`assets/ui/`）。
 
 ---
 
@@ -48,8 +48,6 @@ cp "/你的路径/真假妈妈_成片_v12.7_配音音乐字幕_56.3s_1080p.mp4" 
 cp "/你的路径/配音音乐混合轨_v12.7.wav"                        release/audio/
 cp "/你的路径/BGM_A_悬念压迫.mp3" "/你的路径/BGM_B_温暖释然.mp3"  release/audio/
 cp "/你的路径/改3.mp4"                                          release/源画面/
-# 打包 15 条人声
-cd "/你的路径/audio" && zip -r "../../release/audio/配音人声_15条_v12.7.zip" ./*.mp3
 
 # 2. 创建 Release 并上传
 gh release create v12.7 \

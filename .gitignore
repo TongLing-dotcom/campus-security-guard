@@ -22,6 +22,9 @@ secrets.*
 !assets/audio/*.wav
 !assets/preview/*.jpg
 
+# ============ Release 素材暂存目录（不提交，见 RELEASES.md）============
+release/
+
 # ============ 构建与临时产物 ============
 __pycache__/
 *.py[cod]

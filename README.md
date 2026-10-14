@@ -99,6 +99,7 @@ anti-fraud-short-video/
 │   └── 真假妈妈_v12.7_字幕配音工程.mlt   Shotcut 工程文件
 └── assets/
     ├── ui/                   17 张 UI 素材（Pillow 渲染）
+    ├── voice/                15 条人声（AI 合成，可直接复现合成）
     ├── audio/                原创铃声 + 试听
     └── preview/              README 预览帧
 ```
