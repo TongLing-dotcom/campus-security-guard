@@ -1,0 +1,43 @@
+# ============ 密钥与私有配置（★ 切勿提交）============
+xfyun_config.json
+config/xfyun_config.json
+**/xfyun_config.json
+.env
+.env.*
+*.key
+*.pem
+secrets.*
+
+# ============ 大体积媒体（走 Release 分发）============
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.webm
+*.wav
+*.m4a
+*.flac
+*.aac
+# 例外：小体积、需随仓库分发的素材
+!assets/audio/*.wav
+!assets/preview/*.jpg
+
+# ============ 构建与临时产物 ============
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+_render_tmp/
+_tmp*/
+*.log
+*.tmp
+
+# ============ 系统与编辑器 ============
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp

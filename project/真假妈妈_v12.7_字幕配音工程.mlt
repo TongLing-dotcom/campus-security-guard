@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mlt LC_NUMERIC="C" version="7.41.0" title="真假妈妈 v12.7 字幕配音工程" root="<PROJECT_ROOT>/06_导出成片" producer="main_bin">
+  <profile description="HD 1080p 24fps" width="1920" height="1080" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="16" display_aspect_den="9" frame_rate_num="24" frame_rate_den="1" colorspace="709"/>
+  <producer id="vid" in="0" out="1350">
+    <property name="resource"><PROJECT_ROOT>/09_源素材与历史成片/改3.mp4</property>
+    <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+  </producer>
+  <producer id="mix" in="0" out="1350">
+    <property name="resource"><PROJECT_ROOT>/08_配音/audio/配音音乐混合轨_v12.7.wav</property>
+    <property name="mlt_service">avformat</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+  </producer>
+  <tractor id="main" in="0" out="1350">
+    <property name="mlt_service">tractor</property>
+    <track producer="vid"/>
+    <track producer="mix"/>
+    <transition id="mixA">
+      <property name="mlt_service">mix</property>
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="always_active">1</property>
+    </transition>
+    <filter id="sub1" in="116" out="155">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">喂，是小宇吗？</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub2" in="156" out="198">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">喂，哪位？</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub3" in="199" out="245">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">喂，小宇，是妈妈呀。</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub4" in="246" out="269">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">妈？</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub5" in="271" out="329">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">小宇，是妈妈呀。</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub6" in="331" out="389">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">你之前要的东西我寄过去了。</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub7" in="408" out="456">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">妈？真是你啊？！</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub8" in="460" out="582">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">小宇啊，你爸出车祸进医院了，
+你赶紧给这个账号转两千块钱。</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub9" in="923" out="946">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">喂。</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub10" in="949" out="972">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">怎么了。</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub11" in="973" out="1080">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">妈，咱家最近有没有出啥事啊。</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub12" in="1091" out="1200">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">没啥事啊，之前遇到个陌生电话，
+我给挂啦。</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+    <filter id="sub13" in="1230" out="1272">
+      <property name="mlt_service">dynamictext</property>
+      <property name="argument">妈，没事就好。</property>
+      <property name="family">思源黑体 CN</property>
+      <property name="size">58</property>
+      <property name="weight">700</property>
+      <property name="fgcolour">#ffffffff</property>
+      <property name="olcolour">#000000ff</property>
+      <property name="outline">3</property>
+      <property name="halign">center</property>
+      <property name="valign">bottom</property>
+      <property name="geometry">0 0 1920 930 1</property>
+      <property name="pad">0</property>
+    </filter>
+  </tractor>
+  <playlist id="main_bin">
+    <property name="xml_retain">1</property>
+    <entry producer="main" in="00:00:00.000" out="00:00:56.250"/>
+  </playlist>
+</mlt>

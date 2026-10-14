@@ -1,0 +1,191 @@
+{
+  "_说明": "讯飞开放平台 · 《真假妈妈》配音配置（★双产品线：超拟人 + 在线语音合成流式版）。改本文件即可，无需改脚本。",
+  "_控制台": "https://console.xfyun.cn/services/uts",
+  "_安全提示": "本模板已脱敏。请从讯飞控制台填入自己的 appid / api_key / api_secret。",
+  "_服务状态": "★已联调确认：本 APPID 开通的是【新版·超拟人语音合成】(mcd9m97e6)；旧版 medd90fec 返回 11200 未授权，勿用。",
+  "_联调日期": "2026-10-07",
+  "auth_mode": "hmac",
+  "_auth_mode_说明": "hmac = APPID+APIKey+APISecret 签名（鉴权方式二，本项目默认）；apikey = 请求头 x-api-key 传 APIPassword（鉴权方式一）。两者均已实测可用。",
+  "appid": "YOUR_XFYUN_APPID",
+  "api_secret": "YOUR_API_SECRET",
+  "api_key": "YOUR_API_KEY",
+  "api_password": "YOUR_API_PASSWORD",
+  "_api_password_说明": "控制台『鉴权信息·系统默认』的 ak- 串，即 APIPassword。仅 auth_mode=apikey 时使用。★2026-10-14 按用户控制台当前值更新（与 10-07 联调时的旧值不同，若鉴权失败以控制台实时显示为准）。",
+  "extra_auth_key": "YOUR_EXTRA_AUTH_KEY",
+  "extra_auth_time": "2026-10-07 12:25:47",
+  "_extra_auth_说明": "extra_auth_key 为 2026-10-07 联调时的旧系统默认值，仅留档备查；当前生效的是上面的 api_password。",
+  "endpoint": {
+    "host": "cbm01.cn-huabei-1.xf-yun.com",
+    "path": "/v1/private/mcd9m97e6",
+    "_废弃端点": "/v1/private/medd90fec 为旧版『超拟人合成』，本账号未授权（11200 licc failed）"
+  },
+  "endpoint_online_tts": {
+    "host": "tts-api.xfyun.cn",
+    "path": "/v2/tts",
+    "_说明": "★在线语音合成（流式版）WebAPI —— 2026-10-14 按用户控制台信息新增。情绪音色（x4_*_emo 等）挂在这条产品线下，与超拟人端点共用同一套 APPID/APIKey/APISecret。请求体为 common/business/data 结构（与超拟人的 header/parameter/payload 不同），脚本用 --line online 自动切换。",
+    "_授权提醒": "服务量与发音人是两项独立授权。情绪音色需在控制台 https://console.xfyun.cn/services/uts 的『在线语音合成』服务下单独开通；开通后把 vcn（如 x4_lingfeiyi_oral_emo）写进 online_tts_defaults 或用 --vcn 传入。"
+  },
+  "active_line": "ultra",
+  "_active_line_说明": "ultra = 超拟人端点（项目 13 句配音在用，默认，行为完全不变）；online = 在线语音合成流式版 v2/tts（情绪音色专用）。命令行 --line online 可单次覆盖。",
+  "online_tts_defaults": {
+    "vcn": "xiaoyan",
+    "speed": 50,
+    "volume": 50,
+    "pitch": 50,
+    "bgs": 0,
+    "reg": "0",
+    "rdn": "0",
+    "rhy": "0",
+    "aue": "lame",
+    "tte": "UTF8"
+  },
+  "_online_tts_defaults_说明": "在线语音合成（v2/tts）默认参数，字段与超拟人不同（★2026-10-14 实测）：音频格式用 aue（raw=pcm16k / lame=mp3）而非 audio 对象；reg/rdn/rhy 必须是字符串；data 段 encoding 由脚本自动带上。vcn 默认 xiaoyan（讯飞小燕，免费包常见基础发音人）；若报 11200 说明该发音人未授权，换控制台『在线语音合成』里已开通的 vcn（情绪音色形如 x4_lingfeiyi_oral_emo）。单次文本上限约 8000 字节（2000 汉字）。",
+  "timeout": 120,
+  "stream_default": false,
+  "_stream_default_说明": "false=一次性传完(status=2)，离线生成配音最快最稳；true=双向流式分片发送(status 0/1/2)，适合边生成边播。",
+  "tts_defaults": {
+    "vcn": "x6_pangbainv1_pro",
+    "speed": 46,
+    "volume": 50,
+    "pitch": 50,
+    "oral_level": "low",
+    "bgs": 0,
+    "reg": 0,
+    "rdn": 0,
+    "rhy": 0,
+    "sample_rate": 24000,
+    "channels": 1,
+    "bit_depth": 16,
+    "frame_size": 0,
+    "encoding": "lame"
+  },
+  "_tts_defaults_说明": "encoding=lame → mp3；sample_rate 24000 官方推荐。speech 0-100（50=默认语速）。",
+  "authorized_vcn": {
+    "x6_lingxiaoxuan_pro": "聆小璇 · 成年女 · 交互聊天（默认免费）",
+    "x6_lingfeiyi_pro": "聆飞逸 · 成年男 · 交互聊天（默认免费）",
+    "x6_lingyuyan_pro": "聆玉言 · 成年女 · 交互聊天",
+    "x6_pangbainv1_pro": "旁白女声 · 成年女 · 旁白配音",
+    "x6_pangbainan1_pro": "旁白男声 · 成年男 · 旁白配音",
+    "x5_lingxiaoxuan_flow": "聆小璇 · 成年女 · 旧版流式",
+    "x5_lingyuzhao_flow": "聆玉昭 · 成年女 · 旧版流式"
+  },
+  "cast": {
+    "旁白": {
+      "vcn": "x6_pangbainv1_pro",
+      "speed": 46,
+      "pitch": 50,
+      "oral_level": "low"
+    },
+    "男主": {
+      "vcn": "x6_lingfeiyi_pro",
+      "speed": 52,
+      "pitch": 52,
+      "oral_level": "mid"
+    },
+    "真妈妈": {
+      "vcn": "x6_lingyuyan_pro",
+      "speed": 48,
+      "pitch": 56,
+      "oral_level": "mid"
+    },
+    "假妈妈": {
+      "vcn": "x6_lingxiaoxuan_pro",
+      "speed": 50,
+      "pitch": 54,
+      "oral_level": "mid"
+    },
+    "骗子": {
+      "vcn": "x6_pangbainan1_pro",
+      "speed": 50,
+      "pitch": 44,
+      "oral_level": "low"
+    }
+  },
+  "_cast_说明": "《真假妈妈》选角。假妈妈/真妈妈必须用不同女声，否则观众分不清真假；骗子用旁白男声以制造冷感、并与男主区分。",
+  "tone_presets": {
+    "_说明": "★ 语气预设。用法：命令行 --tone 焦急；或台词表里写 {\"tone\":\"焦急\"}。也可在此自定义新语气。",
+    "_三个旋钮": "speed 语速 0-100（50=默认，100≈2倍速；改变时长，最强杠杆）｜pitch 语调 0-100（实测谱质心随 pitch 单调上升 799→1407Hz，越大越高越亮）｜volume 音量 0-100（实测响度单调上升 -29.2→-18.1 dBFS）",
+    "_实测结论": "speed / pitch / volume / rdn / reg / bgs / sample_rate 经 MD5 与声学指标双重验证均真实生效；oral_level 对 x6 音色几乎无感（文档称仅 x4 系列支持，实测时长与波形差异极小）。",
+    "平静": {
+      "speed": 50,
+      "pitch": 50,
+      "volume": 50
+    },
+    "温柔": {
+      "speed": 44,
+      "pitch": 56,
+      "volume": 46
+    },
+    "亲切": {
+      "speed": 48,
+      "pitch": 54,
+      "volume": 50
+    },
+    "疑惑": {
+      "speed": 46,
+      "pitch": 60,
+      "volume": 48
+    },
+    "焦急": {
+      "speed": 78,
+      "pitch": 62,
+      "volume": 60
+    },
+    "慌张": {
+      "speed": 86,
+      "pitch": 68,
+      "volume": 62
+    },
+    "施压": {
+      "speed": 60,
+      "pitch": 36,
+      "volume": 56
+    },
+    "冷酷": {
+      "speed": 52,
+      "pitch": 32,
+      "volume": 52
+    },
+    "威胁": {
+      "speed": 56,
+      "pitch": 30,
+      "volume": 60
+    },
+    "委屈": {
+      "speed": 44,
+      "pitch": 64,
+      "volume": 42
+    },
+    "释然": {
+      "speed": 42,
+      "pitch": 46,
+      "volume": 44
+    },
+    "激动": {
+      "speed": 72,
+      "pitch": 66,
+      "volume": 58
+    },
+    "低沉": {
+      "speed": 44,
+      "pitch": 32,
+      "volume": 48
+    },
+    "念白": {
+      "speed": 42,
+      "pitch": 50,
+      "volume": 48
+    }
+  },
+  "text_syntax": {
+    "_说明": "★ 停顿与多音字：直接写在 text 里，接口原生支持，已实测生效。覆盖本文件 tts_defaults 之外的表现力。",
+    "停顿": "[p500] = 插入 500 毫秒静音。可多处叠加：「小宇，[p300]你爸进医院了，[p300]妈急死了。」实测 [p300]×2 使时长 +0.70s、[p800]×2 使时长 +1.68s。全角［p500］会被自动转成半角。",
+    "多音字": "着[=zhuo2]手 = 指定前一个字的读音，声调写 1-5。"
+  },
+  "tools": {
+    "ffmpeg": "D:\\Shotcut\\ffmpeg.exe",
+    "ffprobe": "D:\\Shotcut\\ffprobe.exe"
+  },
+  "_tools_说明": "本机 PATH 无 ffmpeg，实际位置在 Shotcut 目录。也可用 FFMPEG / FFPROBE 环境变量覆盖。",
+  "_模板说明": "这是脱敏模板：把 appid / api_key / api_secret 换成你自己的即可。使用方式：复制为 xfyun_config.json 再填值（该文件已在 .gitignore 中，不会被提交）。"
+}
