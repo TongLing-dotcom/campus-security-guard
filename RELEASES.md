@@ -8,13 +8,13 @@
 
 ## 一、需要下载的文件
 
-| # | 文件 | 大小 | 放置到仓库内路径 |
-| :-: | :-- | --: | :-- |
-| 1 | `真假妈妈_成片_v12.7_配音音乐字幕_56.3s_1080p.mp4` | 29.4 MB | `release/成片/` |
-| 2 | `BGM_A_悬念压迫.mp3` | 4.1 MB | `release/audio/` |
-| 3 | `BGM_B_温暖释然.mp3` | 7.5 MB | `release/audio/` |
-| 4 | `配音音乐混合轨_v12.7.wav` | 10.3 MB | `release/audio/` |
-| 5 | `改3.mp4`（成片源画面，重出片必需） | 16 MB | `release/源画面/` |
+| # | GitHub 上的文件名 | 中文说明 | 大小 | 放置到 |
+| :-: | :-- | :-- | --: | :-- |
+| 1 | `film_v12.7_1080p.mp4` | **成片**（56.30s / 1080p） | 29.4 MB | `release/成片/` |
+| 2 | `bgm_a_tension.mp3` | 配乐 A · 悬念压迫 | 4.1 MB | `release/audio/` |
+| 3 | `bgm_b_warmth.mp3` | 配乐 B · 温暖释然 | 7.5 MB | `release/audio/` |
+| 4 | `audio_mix_v12.7.wav` | 人声 ＋ BGM ＋ 铃声 混合音轨 | 10.3 MB | `release/audio/` |
+| 5 | `source_footage.mp4` | **源画面《改3》**（重出片必需） | 16.3 MB | `release/源画面/` |
 
 > **下面这些体积很小，已直接包含在仓库中，无需下载**：
 > 15 条人声（`assets/voice/`，共 230 KB）、原创电话铃声（`assets/audio/`）、17 张 UI 素材（`assets/ui/`）。
